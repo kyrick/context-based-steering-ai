@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Levels/Track_One/TrackOne.gd" type="Script" id=1]
+[ext_resource path="res://src/agents/car/Car.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Common/Bounds.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 300, 75, 0, 0, 0, 0, 489, 68, 0, 0, 0, 0, 721, 73, 0, 0, 0, 0, 861, 92, 0, 0, 0, 0, 948.557, 126.677, 0, 0, 0, 0, 988, 250, 0, 0, 0, 0, 970, 427, 0, 0, 0, 0, 939.214, 491.088, 0, 0, 0, 0, 880.481, 519.12, 0, 0, 0, 0, 793.716, 500.432, 0, 0, 0, 0, 748.331, 440.364, 0, 0, 0, 0, 696.273, 369.618, 0, 0, 0, 0, 616.182, 334.912, 0, 0, 0, 0, 516.069, 388.306, 0, 0, 0, 0, 457, 464, 0, 0, 0, 0, 397.269, 517.785, 0, 0, 0, 0, 261, 548, 0, 0, 0, 0, 181, 530, 0, 0, 0, 0, 67, 506, 0, 0, 0, 0, 65, 330, 0, 0, 0, 0, 77, 174, 0, 0, 0, 0, 106, 114, 0, 0, 0, 0, 300, 75 )
+}
+
+[node name="TrackOne" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RaceTrack" type="Path2D" parent="."]
+position = Vector2( -13.3484, -16.0181 )
+curve = SubResource( 1 )
+
+[node name="RaceTrackFollow" type="PathFollow2D" parent="RaceTrack"]
+position = Vector2( 300, 75 )
+rotation = -0.0370208
+
+[node name="Car" parent="." instance=ExtResource( 2 )]
+position = Vector2( 197.746, 94.1906 )
+
+[node name="Car2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 222.114, 107.964 )
+
+[node name="Car3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 224.233, 71.9418 )
+
+[node name="Car4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 186.622, 61.3472 )
+
+[node name="Car5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 180.795, 118.558 )
+
+[node name="Car6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 167.552, 85.7148 )
+
+[node name="Car7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 145.303, 116.969 )
+
+[node name="Car8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 137.357, 75.9043 )
+
+[node name="Car9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 323.823, 69.8229 )
+
+[node name="Car10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 348.19, 83.5959 )
+
+[node name="Car11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 350.309, 47.5742 )
+
+[node name="Car12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 312.698, 36.9796 )
+
+[node name="Car13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 306.871, 94.1906 )
+
+[node name="Car14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 293.628, 61.3472 )
+
+[node name="Car15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 271.379, 92.6013 )
+
+[node name="Car16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 263.433, 51.5367 )
+
+[node name="InnerBounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InnerBounds"]
+polygon = PoolVector2Array( 227.744, 177.401, 346.545, 134.686, 521.409, 118.668, 710.956, 101.315, 827.087, 117.333, 879.146, 177.401, 905.842, 281.518, 903.173, 378.962, 845.775, 415.002, 793.716, 357.604, 749.666, 293.532, 686.929, 252.152, 612.178, 244.143, 514.734, 253.487, 431.974, 324.233, 395.934, 384.301, 305.165, 475.07, 206.386, 479.075, 128.966, 443.034, 104.939, 369.618, 100.934, 268.17, 131.635, 205.433 )
+
+[node name="OuterBounds" parent="." instance=ExtResource( 3 )]
